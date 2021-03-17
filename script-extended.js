@@ -30,7 +30,7 @@ function drawHoverTable(sw, sh, pw) {
                 width: calc(${pw}px + 0.8px); 
                 top: calc(${j * pw}px - 0.4px); 
                 left: calc(${i * pw}px - 0.4px);" 
-            onmousedown="playSound()">
+            onmousedown="playSoundPop()">
             </div>
             `);
         }
@@ -39,7 +39,30 @@ function drawHoverTable(sw, sh, pw) {
 
 }
 
-function playSound() {
+function playSoundPop() {
     var audio = new Audio('./sfx/pop.flac');
     audio.play();
+}
+
+function playSoundSelect() {
+    var audio = new Audio('./sfx/select.wav');
+    audio.play();
+}
+
+
+
+// ------------ Expandable -----------
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+        this.classList.toggle("expandable-active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
 }

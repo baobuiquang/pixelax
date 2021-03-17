@@ -1,0 +1,227 @@
+:root {
+    --theme-color: #272727;
+    --theme-color-2: #1b1b1b;
+    --theme-color-hover: #3b3b3b;
+    --accent-color: #ffd885;
+
+    --sub-text-color: #adadad;
+
+    --tool-color: #6d6d6d;
+    --tool-color-hover: #e6e6e6;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: var(--sub-text-color);
+} a:hover {
+    color: #ffffff;
+}
+
+h1 {
+    margin: 2.5vh 0 0 0;
+}
+h2 {
+    font-weight: 300;
+    margin: 0 0 0.0vh 0;
+    color: var(--sub-text-color);
+}
+h3 {
+    font-weight: 500;
+    margin: 3vh 0 1vh 0;
+    color: var(--sub-text-color);
+}
+h4 {
+    font-weight: 500;
+    color: var(--sub-text-color);
+    margin: 0;
+}
+
+
+.art-board-border {
+    height: calc(100% + 1px); 
+    width: calc(100% + 1px); 
+    position: absolute;
+    top: -0.5px;
+    left: -0.5px;
+    border-radius: 2px; 
+    border: 2px solid #c9c9c9; 
+    cursor: pointer;
+}
+
+[class*="hover-"] {
+    box-sizing: border-box;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 1px;
+    transform: scale(0.7);
+    opacity: 0.5;
+    transition: all 0.2s;
+} [class*="hover-"]:hover {
+    background-color: #ffffff26;
+    border: 1px solid #ffffff;
+    transform: scale(1.01);
+    opacity: 1.0;
+}
+
+.side-menu {
+    height: 100vh; 
+    width: 15vw; 
+    background-color: var(--theme-color-2); 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 1;
+    padding: 0 1vw;
+}
+.side-menu input {
+    width: 100%;
+    padding: 1vh 1vw;
+    outline: none;
+    border: 3px solid #ffffff;
+    border-radius: 4px;
+    transition: all linear 0.1s;
+} .side-menu input:focus {
+    border: 3px solid #8fdfdb;
+}
+.side-menu .artboard-size button {
+    width: calc(100% - 0.4vw);
+    font-size: 1.8vh;
+    margin: 0 0.2vw;
+    padding: 1vh 0;
+    outline: none;
+    border: none;
+    color: #ffffff;
+    border-radius: 4px;
+    background-color: var(--theme-color);
+    transition: all linear 0.1s;
+} .side-menu .artboard-size button:hover {
+    background-color: var(--theme-color-hover);
+    color: var(--accent-color);
+} .side-menu .artboard-size button:focus {
+    background-color: var(--accent-color);
+    color: black;
+}
+
+.frames-wrap {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    width: calc(100% - 15vw);
+}
+
+.export-button-wrap {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 15vw;
+} .export-button-wrap .tools_export_png {
+    font-size: 2.2vh;
+    margin: 3vh 1vw;
+    padding: 1.5vh 1vw;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    color: #ffffff;
+    background-color: var(--theme-color);
+    transition: all linear 0.2s;
+} .export-button-wrap .tools_export_png:hover {
+    color: var(--accent-color);
+    background-color: var(--theme-color-hover);
+} .export-button-wrap .tools_export_png:hover a {
+    color: var(--accent-color);
+}
+
+
+.palette-wrap {
+    margin: 1vh 0;
+    /* border: 5px solid #ffffff; */
+    border-radius: 4px;
+    overflow: hidden;
+}
+.palette {
+    cursor: pointer;
+    height: 3.5vh;
+    transition: all ease 0.1s;
+} .palette:hover {
+    border-radius: 2px;
+    border: 2px solid #ffffff;
+    transform: scale(1.2);
+}
+
+
+
+
+/* --------------------- Expand Button ---------------------- */
+.expandable {
+    margin: 0 0 1vh 0;
+    padding: 0;
+} .expandable button {
+    background-color: var(--theme-color);
+} .expandable button:hover {
+    background-color: var(--theme-color-hover);
+} .expandable button:focus {
+    background-color: var(--theme-color-hover);
+}
+
+.accordion {
+    border-radius: 3px;
+    padding: 1vh 1vw;
+    color: #ffffff;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    transition: 0.3s;
+    /* border-left: 1px solid #858585; */
+  } .accordion h3, p {
+      margin: 2px 0;
+  }
+  
+  .expandable-active, .accordion:hover {
+    background-color:  transparent; /*Active*/
+    color: #ffffff;
+    /* border-left: 5px solid #ffffff; */
+  }
+  
+  .accordion::before {
+    position: relative;
+    height: 0;
+    content: '';
+    color: #ffffff; /*The icon*/
+    font-weight: bold;
+    float: right;
+    top: -8px;
+    right: 0px;
+    font-size: 32px;
+    color: #ffffff;
+  }
+  
+  .expandable-active::before {
+    content: "";
+  }
+  
+  .panel {
+    padding: 0;
+    background-color: transparent;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+  } .panel p {
+      margin: 8px 0 4px 0;
+  }
+
+
+  .note-for-user {
+      position: relative;
+      font-size: 1.2vh;
+      font-weight: 300;
+      top: -3vh;
+      color: #868686;
+  }

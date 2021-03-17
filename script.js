@@ -1,5 +1,5 @@
 // Default dimensions
-let defPixelWidth = 10;
+let defPixelWidth = 20;
 let defSceneHeight = 200;
 let defSceneWidth = 300;
 sh = defSceneHeight;
@@ -167,8 +167,8 @@ function zoom() {
     level = $('.tools_zoom input').val() / 10;
     scrollLevel = $('.tools_zoom input').val();
 
-    $('.tip').html(`x ${level}`);
-    $('.tip').css('left', `${level * 102 - 110}px`);
+    $('.tip').html(`X ${level}`);
+    $('.tip').css('left', `${level * 3.8 - 3.1}vw`);
     $('.tip').css('opacity', 1);
     $('.zoom').css('transform', `scale(${level})`);
 }
@@ -181,7 +181,7 @@ $('.tools_zoom input').on("input change", () => {
 $('.tools_zoom input').on("change", () => {
     setTimeout(() => {
         $('.tip').css('opacity', 0);
-    }, 200)
+    }, 300)
 });
 
 
@@ -189,7 +189,7 @@ $('.pan').bind('mousewheel', e => {
     level = $('.tools_zoom input').val() / 10;
 
     if (e.originalEvent.wheelDelta / 120 > 0) {
-        if (scrollLevel < 30) {
+        if (scrollLevel < 50) {
             scrollLevel++
         }
     } else {
@@ -202,7 +202,7 @@ $('.pan').bind('mousewheel', e => {
 
     setTimeout(() => {
         $('.tip').css('opacity', 0);
-    }, 200)
+    }, 500)
 });
 
 // Draw
@@ -459,7 +459,7 @@ $('select').change(function () {
 
 // Let's initiate our color pickers
 var currentColor = '#ffffff';
-let bgColor = '#2f303e';
+let bgColor = '#ffffff00';
 
 $("#colorpicker").spectrum({
     color: "ffffff",
@@ -474,7 +474,7 @@ $("#colorpicker").spectrum({
 });
 
 $("#bgpicker").spectrum({
-    color: "2f303e",
+    color: "262626",
     preferredFormat: "hex",
     showInput: true,
     move(color) {
@@ -594,7 +594,8 @@ $('.tools_pan').click(function () {
     $(this).toggleClass('inactive')
     if (pan == false) {
         $('.pan').draggable('enable');
-        $('.pan').css('cursor', 'move');
+        $('.pan').css('cursor', 'move !important');
+        $('*').css('cursor', 'move !important');
         pan = true
     } else {
         pan = false
@@ -769,7 +770,7 @@ $('.play').click(function () {
     } else {
         playAnimation()
         playing = true;
-        $(this).html('<i class="fa fa-stop"></i>')
+        $(this).html('<i class="fa fa-pause"></i>')
     }
 })
 frame = 1;

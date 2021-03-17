@@ -4,197 +4,433 @@
 <head>
   <meta charset="UTF-8">
   <title>CodePen - PixelCreator</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <!-- Library -->
   <link rel='stylesheet' href='./lib/spectrum.css'>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
   <link rel='stylesheet' href='./lib/select2.css'>
-  <link rel="stylesheet" href="./styles.css">
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/0422542145.js" crossorigin="anonymous"></script>
+  <!-- Creatoper Library -->
+  <script src="./creatoper/creatoper.js" defer></script>
+  <link href="./creatoper/creatoper.css" rel="stylesheet">
+  <!-- <script src="https://unpkg.com/creatoper@1.0.2/creatoper.js" defer></script>
+  <link href="https://unpkg.com/creatoper@1.0.2/creatoper.css" rel="stylesheet"> -->
+  <link href="./creatoper/creatoper-control.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles-extended.css">
 </head>
 
 <body>
-  <!-- A canvas to export as image -->
-  <canvas id="canvas" style="border:2px solid black;" width="1000" height="1000"></canvas>
 
-  <!-- Main -->
-  <div class='app'>
-    <!-- ------------------------------------- Art Board ---------------------------------------- -->
-    <div class='zoom'>
-      <div class='pan'>
-        <div class='scene' id='scene'>
-          <div class='pcount'>
-            <h5>Pixel Count</h5>
-            <span class='c'>0</span>
-            <span>/ 10000</span>
-            <p>Left-click to draw and right-click to erase.</p>
-          </div>
-          <!-- Table -->
-          <div class='row'></div>
-          <div class='col'></div>
-          <!-- Border -->
-          <div
-            style="height: calc(100% - 1px); width: calc(100% - 1px); position: absolute; border: 1px solid #d0baef; cursor: pointer;">
-          </div>
-          <!-- Pixels that user input -->
-          <div class='frame frame1'>
-            <div class='pixels'></div>
-          </div>
-          <!-- WARNING: DON'T PUT ANYTHING UNDER THIS! -->
-          <!-- Hover Table -->
-          <div id="hover-table" style="width: 100%; height: 100%;"></div>
-        </div>
+
+  <!-- ------------------------------------- Side Menu ---------------------------------------- -->
+  <div class="side-menu">
+    <h1 style="font-family: 'Orbitron', sans-serif; font-weight: 100; letter-spacing: 0.15vw;">
+      PixelArtCreator
+    </h1>
+    <h2>Version 1.0.1</h2>
+    <h2>
+      <script>document.write(new Date().getFullYear())</script>
+      ©
+      <a target="_blank" href="http://buiquangbao.github.io/">Bui Quang Bao</a>
+    </h2>
+    <div style="height: 4vh;"></div>
+    <div class='menu_options__psize' style="display: none;">
+      <h3>Pixel size</h3>
+      <input class='w' type='number'>
+    </div>
+    <!-- Artboard Size -->
+    <h3>ARTBOARD SIZE</h3>
+    <div class="row-4 artboard-size">
+      <div class="col">
+        <button class='s active'>S</button>
+      </div>
+      <div class="col">
+        <button class='m'>M</button>
+      </div>
+      <div class="col">
+        <button class='l'>L</button>
+      </div>
+      <div class="col">
+        <button class='xl'>XL</button>
       </div>
     </div>
-    <!-- ------------------------------------- Side Menu ---------------------------------------- -->
-    <aside class='menu'>
-      <div class='menu_options'>
-        <div class='menu_options__psize'>
-          <h3>Pixel size</h3>
-          <input class='w' type='number'>
+    <input class='w' type='hidden'>
+    <input class='inactive h' type='hidden'>
+    <!-- Background -->
+    <div class='menu_options__bcolor'>
+      <h3>BACKGROUND</h3>
+      <input id='bgpicker'>
+      <div class='coutput'>#262626</div>
+    </div>
+
+
+    <!-- color palette -->
+    <div style="width: 100%; margin-top: 9vh;">
+      <h3>COLOR PALETTES </h3>
+      <!-- Pastel -->
+      <div class="expandable">
+        <button class="accordion">
+          <h4>PASTEL PALETTE</h4>
+        </button>
+        <div class="panel">
+          <div class="row-3 palette-wrap">
+            <div class="col">
+              <div onclick="currentColor = '#d1ffdd';" style="background-color: #d1ffdd;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#97ffb3';" style="background-color: #97ffb3;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#41ff74';" style="background-color: #41ff74;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ffd1d1';" style="background-color: #ffd1d1;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ff9797';" style="background-color: #ff9797;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ff4141';" style="background-color: #ff4141;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#d1ffdd';" style="background-color: #d1ffdd;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#97ffb3';" style="background-color: #97ffb3;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#41ff74';" style="background-color: #41ff74;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ffd1d1';" style="background-color: #ffd1d1;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ff9797';" style="background-color: #ff9797;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ff4141';" style="background-color: #ff4141;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#d1ffdd';" style="background-color: #d1ffdd;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#97ffb3';" style="background-color: #97ffb3;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#41ff74';" style="background-color: #41ff74;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ffd1d1';" style="background-color: #ffd1d1;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ff9797';" style="background-color: #ff9797;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ff4141';" style="background-color: #ff4141;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#d1ffdd';" style="background-color: #d1ffdd;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#97ffb3';" style="background-color: #97ffb3;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#41ff74';" style="background-color: #41ff74;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ffd1d1';" style="background-color: #ffd1d1;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ff9797';" style="background-color: #ff9797;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ff4141';" style="background-color: #ff4141;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+          </div>
         </div>
-        <div class='menu_options__ssize'>
-          <h3>Scene size</h3>
-          <button class='s active'>S</button>
-          <button class='m'>M</button>
-          <button class='l'>L</button>
-          <button class='xl'>XL</button>
-          <input class='w' type='hidden'>
-          <input class='inactive h' type='hidden'>
+      </div>
+      <!-- Pastel -->
+      <div class="expandable">
+        <button class="accordion">
+          <h4>PASTEL PALETTE</h4>
+        </button>
+        <div class="panel">
+          <div class="row-3 palette-wrap">
+            <div class="col">
+              <div onclick="currentColor = '#d1ffdd';" style="background-color: #d1ffdd;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#97ffb3';" style="background-color: #97ffb3;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#41ff74';" style="background-color: #41ff74;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ffd1d1';" style="background-color: #ffd1d1;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ff9797';" style="background-color: #ff9797;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ff4141';" style="background-color: #ff4141;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#d1ffdd';" style="background-color: #d1ffdd;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#97ffb3';" style="background-color: #97ffb3;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#41ff74';" style="background-color: #41ff74;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ffd1d1';" style="background-color: #ffd1d1;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ff9797';" style="background-color: #ff9797;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ff4141';" style="background-color: #ff4141;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#d1ffdd';" style="background-color: #d1ffdd;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#97ffb3';" style="background-color: #97ffb3;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#41ff74';" style="background-color: #41ff74;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ffd1d1';" style="background-color: #ffd1d1;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ff9797';" style="background-color: #ff9797;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ff4141';" style="background-color: #ff4141;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#d1ffdd';" style="background-color: #d1ffdd;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#97ffb3';" style="background-color: #97ffb3;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#41ff74';" style="background-color: #41ff74;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ffd1d1';" style="background-color: #ffd1d1;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ff9797';" style="background-color: #ff9797;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ff4141';" style="background-color: #ff4141;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+          </div>
         </div>
-        <div class='menu_options__bcolor'>
-          <h3>Scene background</h3>
-          <input id='bgpicker'>
-          <div class='coutput'>#2f303e</div>
-        </div>
       </div>
-      <div class='menu_effects'>
-        <div class='menu_effects__reflect'>
-          <label for='reflect'>
-            <h4>
-              <i class='fa fa-image'></i>
-              Reflect
-            </h4>
-          </label>
-          <input id='reflect' type='checkbox'>
-        </div>
-      </div>
-      <div class='menu_animations'>
-        <div class='menu_animations__animation'>
-          <h4>Select animation</h4>
-          <select>
-            <option>No animation</option>
-            <option>Spin</option>
-            <option>Bounce</option>
-            <option>Wobble</option>
-          </select>
-        </div>
-      </div>
-    </aside>
-    <!-- ??? -->
-    <div class='overlay'></div>
-    <!-- ------------------------------------- Top Tools ---------------------------------------- -->
-    <nav class='tools'>
-      <div class='tools_zoom'>
-        <h5>Zoom level</h5>
-        <input max='30' min='10' type='range' value='0'>
-        <div class='tip'>
-          x 1.0
-        </div>
-      </div>
-      <div class='tools_grid'>
-        <i class='fa fa-th'></i>
-        <div class='tipt'>Toggle grid [g]</div>
-      </div>
-      <div class='tools_pan inactive'>
-        <i class='fa fa-arrows-alt'></i>
-        <div class='tipt'>Toggle pan [Hold space]</div>
-      </div>
-      <div class='tools_center inactive'>
-        <i class='fa fa-bullseye'></i>
-        <div class='tipt'>Re center [c]</div>
-      </div>
-      <div class='tools_symx inactive'>
-        <i class='fa fa-arrows-h'></i>
-        <div class='tipt'>Symetry X [x]</div>
-      </div>
-      <div class='tools_symy inactive'>
-        <i class='fa fa-arrows-v'></i>
-        <div class='tipt'>Symetry Y [Y]</div>
-      </div>
+
+    </div>
+
+
+
+    <!-- Export button -->
+    <div class="export-button-wrap">
       <div class='tools_export_png'>
         <a>
           Export as image
         </a>
       </div>
-    </nav>
-    <!-- ------------------------------------ Color Picker -------------------------------------- -->
-    <div class='picker'>
-      <h2>
-        <i class='fa fa-paint-brush'></i>
-        Color Selector
-      </h2>
+    </div>
 
-      <div onclick="currentColor = '#97ffb3';" style="height: 10px; width: 20px; background-color: #97ffb3;"></div>
+  </div>
 
-      <br><br>
+  <!-- A canvas to export as image -->
+  <canvas id="canvas" style="border:2px solid black;" width="1000" height="1000"></canvas>
 
-      <input id='colorpicker'>
-      <div class='col'></div>
-      <div class='output'>#ffffff</div>
-      <div class='pick'>
-        <div class='tipt'>Pick color [p]</div>
-        <i class='fa fa-crosshairs'></i>
+  <!-- ------------------------------------- Art Board ---------------------------------------- -->
+  <div class='zoom'>
+    <div class='pan'>
+      <div class='scene' id='scene'>
+        <!-- <div class='pcount'>
+          <h5>Pixel Count</h5>
+          <span class='c'>0</span>
+          <span>/ 10000</span>
+          <p>Left-click to draw and right-click to erase.</p>
+        </div> -->
+        <!-- Table -->
+        <div class='row'></div>
+        <div class='col'></div>
+        <!-- Border -->
+        <div class="art-board-border"></div>
+        <div class="note-for-user">
+          Left-click to draw. Right-click to erase.
+        </div>
+        <!-- Pixels that user input -->
+        <div class='frame frame1'>
+          <div class='pixels'></div>
+        </div>
+        <!-- WARNING: DON'T PUT ANYTHING UNDER THIS! -->
+        <!-- Hover Table -->
+        <div id="hover-table" style="width: 100%; height: 100%;"></div>
       </div>
+    </div>
+
+
+  </div>
+
+  <!-- ------------------------------------- Top Tools ---------------------------------------- -->
+  <nav class='tools'>
+    <div class='tools_zoom'>
+      <input max='50' min='10' type='range' value='0'>
+      <div class='tip'>X 1.0</div>
+    </div>
+    <div class='tools_grid' style="float: right;">
+      <i class='far fa-square'></i>
+      <div class='tipt'>Toggle Grid<br>[G]</div>
+    </div>
+    <div class='tools_pan inactive' style="float: right;">
+      <i class='fas fa-arrows-alt'></i>
+      <div class='tipt'>Toggle Pan<br>[Hold SPACE]</div>
+    </div>
+    <div class='tools_center inactive' style="float: right;">
+      <i class='far fa-dot-circle'></i>
+      <div class='tipt'>Re-center<br>[C]</div>
+    </div>
+    <div class='tools_symx inactive' style="float: right;">
+      <i class='far fa-minus-square' style="transform: rotateZ(90deg);"></i>
+      <div class='tipt'>Symetry X<br>[X]</div>
+    </div>
+    <div class='tools_symy inactive' style="float: right;">
+      <i class='far fa-minus-square'></i>
+      <div class='tipt'>Symetry Y<br>[Y]</div>
+    </div>
+  </nav>
+
+  <!-- ------------------------------------ Color Picker -------------------------------------- -->
+  <div class='picker'>
+    <h3 style="margin: 2px 0 8px 8px;">COLOR PICKER</h3>
+    <input id='colorpicker'>
+    <div class='col'></div>
+    <div class='output'>#ffffff</div>
+    <div class='pick'>
+      <div class='tipt'>Pick Color<br>[P]</div>
+      <i class='fa fa-crosshairs'></i>
     </div>
   </div>
 
   <!-- ??? -->
   <div class='pickOverlay'></div>
+
   <!-- --------------------------------------- Frames ----------------------------------------- -->
-  <div class='keyframes'>
-    <!-- /.playhead -->
-    <div class='keyframes_control'>
-      <h4>Timeline</h4>
-      <div class='controls'>
-        <h4>Onion skin:</h4>
-        <div class='onion'>
-          <input checked='checked' id='onion' type='checkbox'>
-        </div>
-        <h4>FPS:</h4>
-        <input class='f' value='30'>
-        <h4>Controls:</h4>
-        <div class='start'>
-          <i class='fa fa-fast-backward'></i>
-        </div>
-        <div class='prev'>
-          <i class='fa fa-step-backward'></i>
-        </div>
-        <div class='play'>
-          <i class='fa fa-play'></i>
-        </div>
-        <div class='next'>
-          <i class='fa fa-step-forward'></i>
-        </div>
-        <div class='end'>
-          <i class='fa fa-fast-forward'></i>
-        </div>
-      </div>
-    </div>
-    <div class='frames'>
-      <div class='o'></div>
-      <div class='wrap'>
-        <div class='frame activeF frame1' data-frame='1'>
-          <div class='frameTitle'>
-            Frame #1
+  <div class="frames-wrap">
+    <div class='keyframes'>
+      <div class='keyframes_control'>
+        <h4>Keyframes</h4>
+        <div class='controls'>
+
+          <h4>Controls</h4>
+          <div class='start'>
+            <i class='fa fa-fast-backward'></i>
           </div>
-          <i class='fa fa-trash'></i>
-          <i class='fa fa-copy'></i>
+          <div class='prev'>
+            <i class='fa fa-step-backward'></i>
+          </div>
+          <div class='play'>
+            <i class='fa fa-play'></i>
+          </div>
+          <div class='next'>
+            <i class='fa fa-step-forward'></i>
+          </div>
+          <div class='end'>
+            <i class='fa fa-fast-forward'></i>
+          </div>
+
+          <h4>Faded frame</h4>
+          <div class='onion'>
+            <input checked='checked' id='onion' type='checkbox'>
+          </div>
+          <h4>FPS</h4>
+          <input class='f' value='30'>
         </div>
       </div>
-    </div>
-    <div class='add'>
-      +
+      <div class='frames'>
+        <div class='o'></div>
+        <div class='wrap'>
+          <div class='frame activeF frame1' data-frame='1'>
+            <div class='frameTitle'>
+              Frame #1
+            </div>
+            <i class='fa fa-trash'></i>
+            <i class='fa fa-copy'></i>
+          </div>
+        </div>
+      </div>
+      <div class='add'>
+        +
+      </div>
     </div>
   </div>
+
 
 
 

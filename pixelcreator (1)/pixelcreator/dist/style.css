@@ -426,14 +426,14 @@ body .picker {
 }
 body .picker .pick:hover .tipt {
   opacity: 1;
-  top: 220px;
+  top: 200px;
 }
 body .picker .tipt {
   padding: 6px 10px;
   background: #ae88f0;
   transition: all 0.2s;
   opacity: 0;
-  top: 230px;
+  top: 200px;
   pointer-events: none;
   width: 80px;
   font-weight: 600;
