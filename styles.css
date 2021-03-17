@@ -924,19 +924,17 @@ body .scene {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  width: 2.2vh;
-  height: 2.2vh;
+  width: 2.5vh;
+  height: 2.5vh;
   padding: 0;
   position: relative;
-  margin-left: -6px;
-  top: 0.3vh;
+  top: 0.2vh;
   background: transparent;
   border: 2px solid var(--tool-color);
   outline: none;
   border-radius: 3px;
   text-align: center;
   box-sizing: border-box;
-  font-size: 9px;
   cursor: pointer;
   transition: all linear 0.2s;
 }
@@ -950,7 +948,7 @@ body .scene {
   font-family: "fontawesome";
   color: var(--tool-color-hover);
   position: relative;
-  top: 0.25vh;
+  top: 0.2vh;
   left: 0;
 }
 .keyframes_control .controls h4 {
