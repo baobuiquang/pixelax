@@ -1,10 +1,12 @@
 // Default dimensions
 let defPixelWidth = 20;
-let defSceneHeight = 200;
-let defSceneWidth = 300;
+let defSceneHeight = 300;
+let defSceneWidth = 500;
 sh = defSceneHeight;
 sw = defSceneWidth;
 pw = defPixelWidth;
+
+let warningMessage = "Warning:\nChanging this setting will delete your current art!";
 
 // Set up the ui
 function setUI() {
@@ -45,7 +47,7 @@ $('.menu_options__psize input.w').change(() => {
         $('.menu_options__psize input.w').val('1');
     }
     if ($('.scene_pixel').length != 0) {
-        const r = confirm("Changing this will delete your current progress!");
+        const r = confirm(warningMessage);
         if (r == true) {
             $('.scene_pixel').remove()
             pw = $('.menu_options__psize input.w').val();
@@ -63,7 +65,7 @@ $('.menu_options__psize input.w').change(() => {
 
 function changeSceneSize(button) {
     if ($('.scene_pixel').length != 0) {
-        const r = confirm("Changing this will delete your current progress!");
+        const r = confirm(warningMessage);
         if (r == true) {
             if ($('.tools_grid').hasClass('inactive')) {
                 $('.tools_grid').click();
@@ -629,6 +631,10 @@ $(document).keydown(event => {
 
     if (event.which == 89) {
         $('.tools_symy').click();
+    }
+
+    if (event.which == 72) {
+        $('.tools_help').click();
     }
 })
 

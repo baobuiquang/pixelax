@@ -147,7 +147,7 @@ body .picker {
   z-index: 2;
   transform: translateY(0);
   left: calc(100vw - 220px - 2vw);
-  top: 15vh;
+  top: 18vh;
   position: relative;
   background: var(--theme-color-2);
   padding: 20px;
@@ -282,7 +282,16 @@ body .tools_grid, body .tools_pan, body .tools_save, body .tools_center, body .t
   margin: 0vh 1.4vw;
   cursor: pointer;
 }
-body .tools_grid:hover, body .tools_pan:hover, body .tools_save:hover, body .tools_center:hover, body .tools_symx:hover, body .tools_symy:hover {
+body .tools_help {
+  color: var(--tool-color);
+  transition: all 0.2s;
+  position: relative;
+  /* top: -1px; */
+  font-size: 2.6vh;
+  margin: 0vh 1.4vw;
+  cursor: pointer;
+}
+body .tools_help:hover, body .tools_grid:hover, body .tools_pan:hover, body .tools_save:hover, body .tools_center:hover, body .tools_symx:hover, body .tools_symy:hover {
   color: var(--tool-color-hover) !important;
 }
 body .tools_grid.inactive, body .tools_pan.inactive, body .tools_save.inactive, body .tools_center.inactive, body .tools_symx.inactive, body .tools_symy.inactive {
@@ -599,11 +608,12 @@ body .menu .x {
 }
 
 .coutput {
+  margin-right: 0.4vw;
   float: right;
-  font-size: 1.5vh;
+  font-size: 1.6vh;
   font-weight: 400;
   position: relative;
-  top: 1vh;
+  top: 1.1vh;
   color: var(--sub-text-color);
 }
 
@@ -1067,9 +1077,12 @@ body .scene {
   opacity: 0.5;
   transition: all 0.2s;
   margin: 3vh 2vw 0 0;
+  font-size: 2.2vh;
+  transition: all linear 0.2s;
 }
 .keyframes .add:hover {
   opacity: 1;
+  color: var(--accent-color);
 }
 .keyframes .play,
 .keyframes .stop {

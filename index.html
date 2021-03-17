@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - PixelCreator</title>
+  <title>Pixel Art Creator</title>
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link
@@ -30,19 +30,42 @@
 
 <body>
 
+  <div id="snackbar2">
+    <h3 style="font-size: 2vh; margin: 0;">HELP CENTER</h3>
+    <br>
+    <i class="fas fa-pen"></i> &nbsp;
+    <mark>Left-click</mark> to draw</i><br><br>
+    <i class="fas fa-eraser"></i> &nbsp;
+    <mark>Right-click</mark> to erase<br><br>
+    <i class="fas fa-search"></i> &nbsp;
+    <mark>Scroll wheel</mark> to zoom in/out<br><br>
+    <i class='far fa-square'></i> &nbsp;
+    <mark>G</mark> to display/hide grid</i><br><br>
+    <i class='fas fa-arrows-alt'></i> &nbsp;
+    <mark>Hold SPACE</mark> to move artboard</i><br><br>
+    <i class='far fa-dot-circle'></i> &nbsp;
+    <mark>C</mark> to re-center artboard</i><br><br>
+    <i class='far fa-minus-square' style="transform: rotateZ(90deg);"></i> &nbsp;
+    <mark>X</mark> to draw vertical symmetry</i><br><br>
+    <i class='far fa-minus-square'></i> &nbsp;
+    <mark>Y</mark> to draw horizontal symmetry</i><br><br>
+    <div style="font-size: 2vh; color: #afafaf;">
+      This box will be closed automatically.
+    </div>
+  </div>
 
   <!-- ------------------------------------- Side Menu ---------------------------------------- -->
   <div class="side-menu">
     <h1 style="font-family: 'Orbitron', sans-serif; font-weight: 100; letter-spacing: 0.15vw;">
       PixelArtCreator
     </h1>
-    <h2>Version 1.0.1</h2>
+    <h2>Version 1.4.17</h2>
     <h2>
       <script>document.write(new Date().getFullYear())</script>
       ©
       <a target="_blank" href="http://buiquangbao.github.io/">Bui Quang Bao</a>
     </h2>
-    <div style="height: 4vh;"></div>
+    <!-- Warning: Don't delete this!!! -->
     <div class='menu_options__psize' style="display: none;">
       <h3>Pixel size</h3>
       <input class='w' type='number'>
@@ -71,226 +94,227 @@
       <input id='bgpicker'>
       <div class='coutput'>#262626</div>
     </div>
-
-
-    <!-- color palette -->
-    <div style="width: 100%; margin-top: 9vh;">
-      <h3>COLOR PALETTES </h3>
-      <!-- Pastel -->
-      <div class="expandable">
-        <button class="accordion">
-          <h4>PASTEL PALETTE</h4>
-        </button>
-        <div class="panel">
-          <div class="row-3 palette-wrap">
-            <div class="col">
-              <div onclick="currentColor = '#d1ffdd';" style="background-color: #d1ffdd;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#97ffb3';" style="background-color: #97ffb3;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#41ff74';" style="background-color: #41ff74;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ffd1d1';" style="background-color: #ffd1d1;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ff9797';" style="background-color: #ff9797;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ff4141';" style="background-color: #ff4141;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#d1ffdd';" style="background-color: #d1ffdd;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#97ffb3';" style="background-color: #97ffb3;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#41ff74';" style="background-color: #41ff74;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ffd1d1';" style="background-color: #ffd1d1;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ff9797';" style="background-color: #ff9797;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ff4141';" style="background-color: #ff4141;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#d1ffdd';" style="background-color: #d1ffdd;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#97ffb3';" style="background-color: #97ffb3;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#41ff74';" style="background-color: #41ff74;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ffd1d1';" style="background-color: #ffd1d1;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ff9797';" style="background-color: #ff9797;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ff4141';" style="background-color: #ff4141;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#d1ffdd';" style="background-color: #d1ffdd;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#97ffb3';" style="background-color: #97ffb3;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#41ff74';" style="background-color: #41ff74;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ffd1d1';" style="background-color: #ffd1d1;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ff9797';" style="background-color: #ff9797;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ff4141';" style="background-color: #ff4141;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-          </div>
+    <!-- Basic tools -->
+    <div class="basic-tools">
+      <h3>TOOLS</h3>
+      <div id="snackbar1">
+        <i class="fas fa-pen"></i> &nbsp;
+        <mark>Left-click</mark> to draw</i><br><br>
+        <i class="fas fa-eraser"></i> &nbsp;
+        <mark>Right-click</mark> to erase<br><br>
+        <i class="fas fa-search"></i> &nbsp;
+        <mark>Scroll wheel</mark> to zoom<br><br>
+        <div style="font-size: 2vh; color: #afafaf;">Press <mark>H</mark> to view all shortcuts!</div>
+      </div>
+      <div class="row-4">
+        <div class="col">
+          <button onclick="showSnackBar1()">
+            <i class="fas fa-pen"></i>
+          </button>
+        </div>
+        <div class="col">
+          <button onclick="showSnackBar1()">
+            <i class="fas fa-eraser"></i>
+          </button>
+        </div>
+        <div class="col">
+          <button onclick="showSnackBar1()">
+            <i class="fas fa-search"></i>
+          </button>
         </div>
       </div>
-      <!-- Pastel -->
-      <div class="expandable">
-        <button class="accordion">
-          <h4>PASTEL PALETTE</h4>
-        </button>
-        <div class="panel">
-          <div class="row-3 palette-wrap">
-            <div class="col">
-              <div onclick="currentColor = '#d1ffdd';" style="background-color: #d1ffdd;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#97ffb3';" style="background-color: #97ffb3;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#41ff74';" style="background-color: #41ff74;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ffd1d1';" style="background-color: #ffd1d1;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ff9797';" style="background-color: #ff9797;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ff4141';" style="background-color: #ff4141;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#d1ffdd';" style="background-color: #d1ffdd;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#97ffb3';" style="background-color: #97ffb3;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#41ff74';" style="background-color: #41ff74;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ffd1d1';" style="background-color: #ffd1d1;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ff9797';" style="background-color: #ff9797;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ff4141';" style="background-color: #ff4141;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#d1ffdd';" style="background-color: #d1ffdd;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#97ffb3';" style="background-color: #97ffb3;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#41ff74';" style="background-color: #41ff74;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ffd1d1';" style="background-color: #ffd1d1;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ff9797';" style="background-color: #ff9797;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ff4141';" style="background-color: #ff4141;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#d1ffdd';" style="background-color: #d1ffdd;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#97ffb3';" style="background-color: #97ffb3;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#41ff74';" style="background-color: #41ff74;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ffd1d1';" style="background-color: #ffd1d1;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ff9797';" style="background-color: #ff9797;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#ff4141';" style="background-color: #ff4141;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
+    <!-- color palette -->
+    <div>
+      <h3>COLOR PALETTES </h3>
+      <!-- Aesthetic Pastel -->
+      <div class="expandable">
+        <button class="accordion">
+          <h4>AESTHETIC PASTEL PALETTE</h4>
+        </button>
+        <div class="panel">
+          <div class="row-3 palette-wrap">
+            <div class="col">
+              <div onclick="currentColor = '#ffadad';" style="background-color: #ffadad;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ffc2a9';" style="background-color: #ffc2a9;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ffd6a5';" style="background-color: #ffd6a5;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#feebae';" style="background-color: #feebae;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#fdffb6';" style="background-color: #fdffb6;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#e4ffbb';" style="background-color: #e4ffbb;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#caffbf';" style="background-color: #caffbf;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#B3FBDF';" style="background-color: #B3FBDF;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#9bf6ff';" style="background-color: #9bf6ff;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#9eddff';" style="background-color: #9eddff;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#a0c4ff';" style="background-color: #a0c4ff;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#afbbff';" style="background-color: #afbbff;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#bdb2ff';" style="background-color: #bdb2ff;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#debcff';" style="background-color: #debcff;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#ffc6ff';" style="background-color: #ffc6ff;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Adobe Pastel -->
+      <div class="expandable">
+        <button class="accordion">
+          <h4>ADOBE PASTEL PALETTE</h4>
+        </button>
+        <div class="panel">
+          <div class="row-3 palette-wrap">
+            <div class="col">
+              <div onclick="currentColor = '#f9ad81';" style="background-color: #f9ad81;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#fdc689';" style="background-color: #fdc689;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#fff799';" style="background-color: #fff799;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#c4df9b';" style="background-color: #c4df9b;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#a3d39c';" style="background-color: #a3d39c;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#82ca9c';" style="background-color: #82ca9c;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#7accc8';" style="background-color: #7accc8;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#6dcff6';" style="background-color: #6dcff6;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#7da7d9';" style="background-color: #7da7d9;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#8393ca';" style="background-color: #8393ca;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#8781bd';" style="background-color: #8781bd;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#a186be';" style="background-color: #a186be;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#bd8cbf';" style="background-color: #bd8cbf;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#f49ac1';" style="background-color: #f49ac1;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#f5989d';" style="background-color: #f5989d;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Grayscale -->
+      <div class="expandable">
+        <button class="accordion">
+          <h4>GRAYSCALE PALETTE</h4>
+        </button>
+        <div class="panel">
+          <div class="row-3 palette-wrap">
+            <div class="col">
+              <div onclick="currentColor = '#ffffff';" style="background-color: #ffffff;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#e0e0e0';" style="background-color: #e0e0e0;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#c0c0c0';" style="background-color: #c0c0c0;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#aaaaaa';" style="background-color: #aaaaaa;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#888888';" style="background-color: #888888;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#666666';" style="background-color: #666666;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#444444';" style="background-color: #444444;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#222222';" style="background-color: #222222;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col">
+              <div onclick="currentColor = '#000000';" style="background-color: #000000;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
 
+          </div>
+        </div>
+      </div>
+    </div>
 
 
     <!-- Export button -->
@@ -323,7 +347,7 @@
         <!-- Border -->
         <div class="art-board-border"></div>
         <div class="note-for-user">
-          Left-click to draw. Right-click to erase.
+          ARTBOARD
         </div>
         <!-- Pixels that user input -->
         <div class='frame frame1'>
@@ -344,13 +368,17 @@
       <input max='50' min='10' type='range' value='0'>
       <div class='tip'>X 1.0</div>
     </div>
+    <div class='tools_help' style="float: right;" onclick="showSnackBar2()">
+      <i class='far fa-question-circle'></i>
+      <div class='tipt'>Help Center<br>[H]</div>
+    </div>
     <div class='tools_grid' style="float: right;">
       <i class='far fa-square'></i>
       <div class='tipt'>Toggle Grid<br>[G]</div>
     </div>
     <div class='tools_pan inactive' style="float: right;">
       <i class='fas fa-arrows-alt'></i>
-      <div class='tipt'>Toggle Pan<br>[Hold SPACE]</div>
+      <div class='tipt'>Move Artboard<br>[Hold SPACE]</div>
     </div>
     <div class='tools_center inactive' style="float: right;">
       <i class='far fa-dot-circle'></i>

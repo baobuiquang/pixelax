@@ -22,6 +22,17 @@ a {
     color: #ffffff;
 }
 
+body {
+    font-size: 1.5vh;
+}
+
+mark {
+    background-color: var(--theme-color);
+    padding: 2px 8px;
+    border-radius: 2px;
+    color: var(--accent-color);
+}
+
 h1 {
     margin: 2.5vh 0 0 0;
 }
@@ -32,7 +43,7 @@ h2 {
 }
 h3 {
     font-weight: 500;
-    margin: 3vh 0 1vh 0;
+    margin: 2vh 0 0.5vh 0;
     color: var(--sub-text-color);
 }
 h4 {
@@ -78,25 +89,15 @@ h4 {
     z-index: 1;
     padding: 0 1vw;
 }
-.side-menu input {
-    width: 100%;
-    padding: 1vh 1vw;
-    outline: none;
-    border: 3px solid #ffffff;
-    border-radius: 4px;
-    transition: all linear 0.1s;
-} .side-menu input:focus {
-    border: 3px solid #8fdfdb;
-}
 .side-menu .artboard-size button {
     width: calc(100% - 0.4vw);
     font-size: 1.8vh;
-    margin: 0 0.2vw;
-    padding: 1vh 0;
+    margin: 0 0.2vw 0 0;
+    padding: 0.8vh 0;
     outline: none;
     border: none;
     color: #ffffff;
-    border-radius: 4px;
+    border-radius: 3px;
     background-color: var(--theme-color);
     transition: all linear 0.1s;
 } .side-menu .artboard-size button:hover {
@@ -220,8 +221,87 @@ h4 {
 
   .note-for-user {
       position: relative;
-      font-size: 1.2vh;
-      font-weight: 300;
-      top: -3vh;
+      font-size: 0.8vh;
+      font-weight: 400;
+      top: -1.8vh;
       color: #868686;
+  }
+
+  .basic-tools {
+    width: 100%;
+    margin-top: 7vh;
+  } .basic-tools .col {
+    padding: 0 0.4vw 0 0;
+  } .basic-tools button {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    background-color: var(--theme-color);
+  } .basic-tools button:hover {
+    background-color: var(--theme-color-hover);
+  } .basic-tools button i {
+      font-size: 2vh;
+      padding: 1vh 0;
+      color: #ffffff;
+  } .basic-tools button:hover i {
+    color: var(--accent-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#snackbar1 {
+    position: fixed;
+    z-index: 100;
+    visibility: hidden;
+    width: 19vw;
+    padding: 5vh 0;
+    padding-left: 3vw;
+    left: 16vw;
+    top: 40vh;
+    background-color: var(--theme-color-2);
+    color: #ffffff;
+    /* text-align: center; */
+    border-radius: 6px;
+    opacity: 0.0;
+    transition: all linear 0.2s;
+    font-size: 2.2vh;
+  } #snackbar1.show {
+    top: 30vh;
+    opacity: 1.0;
+    visibility: visible;
+  }
+
+
+  #snackbar2 {
+    position: fixed;
+    z-index: 100;
+    visibility: hidden;
+    width: 24vw;
+    padding: 8vh 3vw;
+    right: 2vw;
+    top: 20vh;
+    background-color: var(--theme-color-2);
+    color: #ffffff;
+    /* text-align: center; */
+    border-radius: 6px;
+    opacity: 0.0;
+    transition: all linear 0.2s;
+    font-size: 2.2vh;
+  } #snackbar2.show {
+    top: 12vh;
+    opacity: 1.0;
+    visibility: visible;
   }
