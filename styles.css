@@ -281,6 +281,7 @@ body .tools_grid, body .tools_pan, body .tools_save, body .tools_center, body .t
   font-size: 2.6vh;
   margin: 0vh 1.4vw;
   cursor: pointer;
+  transition: all linear 0.2s;
 }
 body .tools_help {
   color: var(--tool-color);
@@ -290,6 +291,7 @@ body .tools_help {
   font-size: 2.6vh;
   margin: 0vh 1.4vw;
   cursor: pointer;
+  transition: all linear 0.2s;
 }
 body .tools_help:hover, body .tools_grid:hover, body .tools_pan:hover, body .tools_save:hover, body .tools_center:hover, body .tools_symx:hover, body .tools_symy:hover {
   color: var(--tool-color-hover) !important;
@@ -877,7 +879,7 @@ body .scene {
   width: 100%;
   color: #728995;
   height: 12vh;
-  background-color: var(--theme-color);
+  background-color: var(--keyframes-color);
 }
 .keyframes canvas {
   position: absolute;
@@ -890,7 +892,7 @@ body .scene {
   position: absolute;
   bottom: 12vh;
   width: 100%;
-  background: var(--theme-color-2);
+  background: var(--keyframes-control-color);
   left: 0;
   padding: 1vh 2vw;
 }

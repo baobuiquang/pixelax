@@ -1,13 +1,16 @@
 :root {
-    --theme-color: #272727;
-    --theme-color-2: #1b1b1b;
+    --theme-color: #1b1b1b;
+    --theme-color-2: #141414;
     --theme-color-hover: #3b3b3b;
     --accent-color: #ffd885;
 
-    --sub-text-color: #adadad;
+    --sub-text-color: #999999;
 
     --tool-color: #6d6d6d;
     --tool-color-hover: #e6e6e6;
+
+    --keyframes-color: #202020;
+    --keyframes-control-color: #191919;
 }
 
 * {
@@ -100,7 +103,7 @@ h4 {
     color: #ffffff;
     border-radius: 3px;
     background-color: var(--theme-color);
-    transition: all linear 0.1s;
+    transition: all linear 0.2s;
 } .side-menu .artboard-size button:hover {
     background-color: var(--theme-color-hover);
     color: var(--accent-color);
@@ -256,6 +259,7 @@ h4 {
     border: none;
     border-radius: 3px;
     background-color: var(--theme-color);
+    transition: all linear 0.2s;
   } .basic-tools button:hover {
     background-color: var(--theme-color-hover);
   } .basic-tools button i {
