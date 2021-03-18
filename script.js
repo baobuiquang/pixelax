@@ -476,7 +476,7 @@ $("#colorpicker").spectrum({
 });
 
 $("#bgpicker").spectrum({
-    color: "262626",
+    color: "1b1b1b", //bg
     preferredFormat: "hex",
     showInput: true,
     move(color) {
