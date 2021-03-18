@@ -87,7 +87,8 @@ h4 {
     top: 0; 
     left: 0; 
     z-index: 1;
-    padding: 0 1vw;
+    padding: 0 1.5vw;
+    overflow: scroll;
 }
 .side-menu .artboard-size button {
     width: calc(100% - 0.4vw);
@@ -117,13 +118,14 @@ h4 {
 }
 
 .export-button-wrap {
+    background-color: var(--theme-color-2);
     position: fixed;
     bottom: 0;
     left: 0;
     width: 15vw;
 } .export-button-wrap .tools_export_png {
     font-size: 2.2vh;
-    margin: 3vh 1vw;
+    margin: 1vh 1vw 2.5vh 1vw;
     padding: 1.5vh 1vw;
     border-radius: 4px;
     cursor: pointer;
@@ -145,11 +147,27 @@ h4 {
     border-radius: 4px;
     overflow: hidden;
 }
-.palette {
+.palette-wrap .palette {
     cursor: pointer;
-    height: 3.5vh;
+    height: 7vh;
     transition: all ease 0.1s;
-} .palette:hover {
+} .palette-wrap .palette:hover {
+    border-radius: 2px;
+    border: 2px solid #ffffff;
+    transform: scale(1.2);
+}
+
+.palette-wrap-2 {
+    margin: 1vh 0;
+    /* border: 5px solid #ffffff; */
+    border-radius: 4px;
+    overflow: hidden;
+}
+.palette-wrap-2 .palette {
+    cursor: pointer;
+    height: 3vh;
+    transition: all ease 0.1s;
+} .palette-wrap-2 .palette:hover {
     border-radius: 2px;
     border: 2px solid #ffffff;
     transform: scale(1.2);
@@ -261,7 +279,7 @@ h4 {
 
 
 
-
+/* --------------------- Snack Bar ------------------ */
 #snackbar1 {
     position: fixed;
     z-index: 100;
@@ -305,3 +323,37 @@ h4 {
     opacity: 1.0;
     visibility: visible;
   }
+
+
+
+  /* ----------------------- Tooltips ------------------------- */
+
+  .tooltip {
+    /* position: relative; */
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    text-transform: uppercase;
+    visibility: hidden;
+    width: 8vw;
+    background-color: var(--theme-color-2);
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 2vh 0;
+    font-size: 1.8vh;
+    /* Position the tooltip */
+    position: fixed;
+    left: 16vw;
+    top: 45vh;
+    z-index: 12;
+    opacity: 0.0;
+    transition: all ease-out 0.3s;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1.0;
+  }
+

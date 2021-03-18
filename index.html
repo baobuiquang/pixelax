@@ -30,6 +30,8 @@
 
 <body>
 
+
+
   <div id="snackbar2">
     <h3 style="font-size: 2vh; margin: 0;">HELP CENTER</h3>
     <br>
@@ -57,14 +59,38 @@
   <!-- ------------------------------------- Side Menu ---------------------------------------- -->
   <div class="side-menu">
     <h1 style="font-family: 'Orbitron', sans-serif; font-weight: 100; letter-spacing: 0.15vw;">
-      PixelArtCreator
+      Pixelax
     </h1>
-    <h2>Version 1.4.17</h2>
-    <h2>
+    <h2>Version 4.1.17</h2>
+    <style>
+      .just-display-on-desktop {
+        display: block !important;
+      }
+
+      @media only screen and (max-width: 768px) {
+        .just-display-on-desktop {
+          display: none !important;
+        }
+      }
+
+      .just-display-on-mobile {
+        display: block !important;
+      }
+
+      @media only screen and (min-width: 768px) {
+        .just-display-on-mobile {
+          display: none !important;
+        }
+      }
+    </style>
+    <div class="just-display-on-desktop" style="font-size: 80px;">
+      ibwrefusbergubserugbvseru
+    </div>
+    <!-- <h2>
       <script>document.write(new Date().getFullYear())</script>
       ©
       <a target="_blank" href="http://buiquangbao.github.io/">Bui Quang Bao</a>
-    </h2>
+    </h2> -->
     <!-- Warning: Don't delete this!!! -->
     <div class='menu_options__psize' style="display: none;">
       <h3>Pixel size</h3>
@@ -72,7 +98,7 @@
     </div>
     <!-- Artboard Size -->
     <h3>ARTBOARD SIZE</h3>
-    <div class="row-4 artboard-size">
+    <div class="row-3 artboard-size">
       <div class="col">
         <button class='s active'>S</button>
       </div>
@@ -82,9 +108,9 @@
       <div class="col">
         <button class='l'>L</button>
       </div>
-      <div class="col">
+      <!-- <div class="col">
         <button class='xl'>XL</button>
-      </div>
+      </div> -->
     </div>
     <input class='w' type='hidden'>
     <input class='inactive h' type='hidden'>
@@ -106,7 +132,7 @@
         <mark>Scroll wheel</mark> to zoom<br><br>
         <div style="font-size: 2vh; color: #afafaf;">Press <mark>H</mark> to view all shortcuts!</div>
       </div>
-      <div class="row-4">
+      <div class="row-3">
         <div class="col">
           <button onclick="showSnackBar1()">
             <i class="fas fa-pen"></i>
@@ -133,64 +159,74 @@
           <h4>AESTHETIC PASTEL PALETTE</h4>
         </button>
         <div class="panel">
-          <div class="row-3 palette-wrap">
-            <div class="col">
+          <div class="row-7 palette-wrap">
+            <div class="col tooltip">
+              <span class="tooltiptext">#ffadad</span>
               <div onclick="currentColor = '#ffadad';" style="background-color: #ffadad;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#ffc2a9</span>
               <div onclick="currentColor = '#ffc2a9';" style="background-color: #ffc2a9;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#ffd6a5</span>
               <div onclick="currentColor = '#ffd6a5';" style="background-color: #ffd6a5;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#feebae</span>
               <div onclick="currentColor = '#feebae';" style="background-color: #feebae;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#fdffb6</span>
               <div onclick="currentColor = '#fdffb6';" style="background-color: #fdffb6;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#e4ffbb</span>
               <div onclick="currentColor = '#e4ffbb';" style="background-color: #e4ffbb;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#caffbf</span>
               <div onclick="currentColor = '#caffbf';" style="background-color: #caffbf;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#B3FBDF</span>
               <div onclick="currentColor = '#B3FBDF';" style="background-color: #B3FBDF;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#9bf6ff</span>
               <div onclick="currentColor = '#9bf6ff';" style="background-color: #9bf6ff;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#9eddff</span>
               <div onclick="currentColor = '#9eddff';" style="background-color: #9eddff;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#a0c4ff</span>
               <div onclick="currentColor = '#a0c4ff';" style="background-color: #a0c4ff;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
-              <div onclick="currentColor = '#afbbff';" style="background-color: #afbbff;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#bdb2ff</span>
               <div onclick="currentColor = '#bdb2ff';" style="background-color: #bdb2ff;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#debcff</span>
               <div onclick="currentColor = '#debcff';" style="background-color: #debcff;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#ffc6ff</span>
               <div onclick="currentColor = '#ffc6ff';" style="background-color: #ffc6ff;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
@@ -203,65 +239,75 @@
           <h4>ADOBE PASTEL PALETTE</h4>
         </button>
         <div class="panel">
-          <div class="row-3 palette-wrap">
-            <div class="col">
+          <div class="row-7 palette-wrap">
+            <div class="col tooltip">
+              <span class="tooltiptext">#f5989d</span>
+              <div onclick="currentColor = '#f5989d';" style="background-color: #f5989d;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">#f9ad81</span>
               <div onclick="currentColor = '#f9ad81';" style="background-color: #f9ad81;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#fdc689</span>
               <div onclick="currentColor = '#fdc689';" style="background-color: #fdc689;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#fff799</span>
               <div onclick="currentColor = '#fff799';" style="background-color: #fff799;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#c4df9b</span>
               <div onclick="currentColor = '#c4df9b';" style="background-color: #c4df9b;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#a3d39c</span>
               <div onclick="currentColor = '#a3d39c';" style="background-color: #a3d39c;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#82ca9c</span>
               <div onclick="currentColor = '#82ca9c';" style="background-color: #82ca9c;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#7accc8</span>
               <div onclick="currentColor = '#7accc8';" style="background-color: #7accc8;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#6dcff6</span>
               <div onclick="currentColor = '#6dcff6';" style="background-color: #6dcff6;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#7da7d9</span>
               <div onclick="currentColor = '#7da7d9';" style="background-color: #7da7d9;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#8393ca</span>
               <div onclick="currentColor = '#8393ca';" style="background-color: #8393ca;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#8781bd</span>
               <div onclick="currentColor = '#8781bd';" style="background-color: #8781bd;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#a186be</span>
               <div onclick="currentColor = '#a186be';" style="background-color: #a186be;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
-              <div onclick="currentColor = '#bd8cbf';" style="background-color: #bd8cbf;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#f49ac1';" style="background-color: #f49ac1;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#f5989d';" style="background-color: #f5989d;" class="palette"
+            <div class="col tooltip">
+              <span class="tooltiptext">#d993c0</span>
+              <div onclick="currentColor = '#d993c0';" style="background-color: #d993c0;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
           </div>
@@ -273,48 +319,249 @@
           <h4>GRAYSCALE PALETTE</h4>
         </button>
         <div class="panel">
-          <div class="row-3 palette-wrap">
-            <div class="col">
+          <div class="row-7 palette-wrap">
+            <div class="col tooltip">
+              <span class="tooltiptext">#ffffff</span>
               <div onclick="currentColor = '#ffffff';" style="background-color: #ffffff;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
-              <div onclick="currentColor = '#e0e0e0';" style="background-color: #e0e0e0;" class="palette"
+            <div class="col tooltip">
+              <span class="tooltiptext">#E0E0E0</span>
+              <div onclick="currentColor = '#E0E0E0';" style="background-color: #E0E0E0;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
+            <div class="col tooltip">
+              <span class="tooltiptext">#c0c0c0</span>
               <div onclick="currentColor = '#c0c0c0';" style="background-color: #c0c0c0;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
-              <div onclick="currentColor = '#aaaaaa';" style="background-color: #aaaaaa;" class="palette"
+            <div class="col tooltip">
+              <span class="tooltiptext">#A0A0A0</span>
+              <div onclick="currentColor = '#A0A0A0';" style="background-color: #A0A0A0;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
-              <div onclick="currentColor = '#888888';" style="background-color: #888888;" class="palette"
+            <div class="col tooltip">
+              <span class="tooltiptext">#808080</span>
+              <div onclick="currentColor = '#808080';" style="background-color: #808080;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
-              <div onclick="currentColor = '#666666';" style="background-color: #666666;" class="palette"
+            <div class="col tooltip">
+              <span class="tooltiptext">#606060</span>
+              <div onclick="currentColor = '#606060';" style="background-color: #606060;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
-            <div class="col">
-              <div onclick="currentColor = '#444444';" style="background-color: #444444;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#222222';" style="background-color: #222222;" class="palette"
-                onmousedown="playSoundSelect()"></div>
-            </div>
-            <div class="col">
-              <div onclick="currentColor = '#000000';" style="background-color: #000000;" class="palette"
+            <div class="col tooltip">
+              <span class="tooltiptext">#404040</span>
+              <div onclick="currentColor = '#404040';" style="background-color: #404040;" class="palette"
                 onmousedown="playSoundSelect()"></div>
             </div>
 
           </div>
         </div>
       </div>
+      <!-- Colors -->
+      <div class="expandable">
+        <button class="accordion">
+          <h4>BASIC COLORS TABLE</h4>
+        </button>
+        <div class="panel">
+          <div class="row-4 palette-wrap-2">
+            <!-- Red -->
+            <div class="col tooltip">
+              <span class="tooltiptext">Red<br>#FF0000</span>
+              <div onclick="currentColor = '#FF0000';" style="background-color: #FF0000;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Rose<br>#FF033E</span>
+              <div onclick="currentColor = '#FF033E';" style="background-color: #FF033E;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Crimson<br>#DC143C</span>
+              <div onclick="currentColor = '#DC143C';" style="background-color: #DC143C;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Firebrick<br>#B22222</span>
+              <div onclick="currentColor = '#B22222';" style="background-color: #B22222;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <!-- Orange -->
+            <div class="col tooltip">
+              <span class="tooltiptext">Orange<br>#FFA500</span>
+              <div onclick="currentColor = '#FFA500';" style="background-color: #FFA500;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Coral<br>#FF7F50</span>
+              <div onclick="currentColor = '#FF7F50';" style="background-color: #FF7F50;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Tomato<br>#FF6347</span>
+              <div onclick="currentColor = '#FF6347';" style="background-color: #FF6347;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Oranged<br>#FF4500</span>
+              <div onclick="currentColor = '#FF4500';" style="background-color: #FF4500;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <!-- Yellow -->
+            <div class="col tooltip">
+              <span class="tooltiptext">Yellow<br>#FFFF00</span>
+              <div onclick="currentColor = '#FFFF00';" style="background-color: #FFFF00;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Lemonchiffon<br>#fff7b1</span>
+              <div onclick="currentColor = '#fff7b1';" style="background-color: #fff7b1;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Khaki<br>#F0E68C</span>
+              <div onclick="currentColor = '#F0E68C';" style="background-color: #F0E68C;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Gold<br>#FFD700</span>
+              <div onclick="currentColor = '#FFD700';" style="background-color: #FFD700;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <!-- Green -->
+            <div class="col tooltip">
+              <span class="tooltiptext">Lime<br>#00FF00</span>
+              <div onclick="currentColor = '#00FF00';" style="background-color: #00FF00;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Springgreen<br>#00FF7F</span>
+              <div onclick="currentColor = '#00FF7F';" style="background-color: #00FF7F;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Seagreen<br>#3CB371</span>
+              <div onclick="currentColor = '#3CB371';" style="background-color: #3CB371;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Green<br>#008000</span>
+              <div onclick="currentColor = '#008000';" style="background-color: #008000;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <!-- Cyan -->
+            <div class="col tooltip">
+              <span class="tooltiptext">Cyan<br>#00FFFF</span>
+              <div onclick="currentColor = '#00FFFF';" style="background-color: #00FFFF;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Aquamarine<br>#7FFFD4</span>
+              <div onclick="currentColor = '#7FFFD4';" style="background-color: #7FFFD4;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Turquoise<br>#40E0D0</span>
+              <div onclick="currentColor = '#40E0D0';" style="background-color: #40E0D0;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Teal<br>#008080</span>
+              <div onclick="currentColor = '#008080';" style="background-color: #008080;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <!-- Blue -->
+            <div class="col tooltip">
+              <span class="tooltiptext">Blue<br>#0000FF</span>
+              <div onclick="currentColor = '#0000FF';" style="background-color: #0000FF;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Deepsky<br>#00BFFF</span>
+              <div onclick="currentColor = '#00BFFF';" style="background-color: #00BFFF;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Slateblue<br>#7B68EE</span>
+              <div onclick="currentColor = '#7B68EE';" style="background-color: #7B68EE;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Navy<br>#000080</span>
+              <div onclick="currentColor = '#000080';" style="background-color: #000080;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <!-- Purple -->
+            <div class="col tooltip">
+              <span class="tooltiptext">Purple<br>#800080</span>
+              <div onclick="currentColor = '#800080';" style="background-color: #800080;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Plum<br>#DDA0DD</span>
+              <div onclick="currentColor = '#DDA0DD';" style="background-color: #DDA0DD;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Magenta<br>#FF00FF</span>
+              <div onclick="currentColor = '#FF00FF';" style="background-color: #FF00FF;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Darkorchid<br>#9400D3</span>
+              <div onclick="currentColor = '#9400D3';" style="background-color: #9400D3;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <!-- Pink -->
+            <div class="col tooltip">
+              <span class="tooltiptext">Pink<br>#FFC0CB</span>
+              <div onclick="currentColor = '#FFC0CB';" style="background-color: #FFC0CB;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Hotpink<br>#FF69B4</span>
+              <div onclick="currentColor = '#FF69B4';" style="background-color: #FF69B4;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Deeppink<br>#FF1493</span>
+              <div onclick="currentColor = '#FF1493';" style="background-color: #FF1493;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Medvioletred<br>#C71585</span>
+              <div onclick="currentColor = '#C71585';" style="background-color: #C71585;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <!-- White -->
+            <div class="col tooltip">
+              <span class="tooltiptext">White<br>#FFFFFF</span>
+              <div onclick="currentColor = '#FFFFFF';" style="background-color: #FFFFFF;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+
+            <div class="col tooltip">
+              <span class="tooltiptext">Lavenderblush<br>#FFF0F5</span>
+              <div onclick="currentColor = '#FFF0F5';" style="background-color: #FFF0F5;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Mistyrose<br>#FFE4E1</span>
+              <div onclick="currentColor = '#FFE4E1';" style="background-color: #FFE4E1;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+            <div class="col tooltip">
+              <span class="tooltiptext">Antiquewhite<br>#FAEBD7</span>
+              <div onclick="currentColor = '#FAEBD7';" style="background-color: #FAEBD7;" class="palette"
+                onmousedown="playSoundSelect()"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div style="height: 7vh; width: 100%; background-color: #fff79900;"></div>
 
 
     <!-- Export button -->
@@ -384,14 +631,15 @@
       <i class='far fa-dot-circle'></i>
       <div class='tipt'>Re-center<br>[C]</div>
     </div>
-    <div class='tools_symx inactive' style="float: right;">
-      <i class='far fa-minus-square' style="transform: rotateZ(90deg);"></i>
-      <div class='tipt'>Symetry X<br>[X]</div>
-    </div>
     <div class='tools_symy inactive' style="float: right;">
       <i class='far fa-minus-square'></i>
       <div class='tipt'>Symetry Y<br>[Y]</div>
     </div>
+    <div class='tools_symx inactive' style="float: right;">
+      <i class='far fa-minus-square' style="transform: rotateZ(90deg);"></i>
+      <div class='tipt'>Symetry X<br>[X]</div>
+    </div>
+
   </nav>
 
   <!-- ------------------------------------ Color Picker -------------------------------------- -->

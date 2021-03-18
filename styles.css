@@ -591,7 +591,7 @@ body .menu .x {
   border: none;
   outline: none;
   border-radius: 4px;
-  padding: 1vh;
+  padding: 1vh 1vh;
   text-align: center;
   color: #bea5dd;
   box-sizing: border-box;
@@ -634,7 +634,7 @@ body .menu .x {
   border-radius: 3px;
   width: 3vw;
   overflow: hidden;
-  height: 3vh;
+  height: 2.6vh;
   border: none;
 }
 

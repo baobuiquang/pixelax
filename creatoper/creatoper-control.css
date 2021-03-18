@@ -2,7 +2,7 @@
         /* Text System */
         --text-color: #f0f0f0;
         --font-size-0: 2vh; /*p*/
-        --font-size-1: 1.25vw; /*h1*/
+        --font-size-1: 1.5vw; /*h1*/
         --font-size-2: 1.8vh; /*h2*/
         --font-size-3: 1.4vh; /*h3*/
         --font-size-4: 1.5vh; /*h4*/
@@ -28,7 +28,7 @@
         --scrolltotop-padding: 20px;
         --scrolltotop-background-color: transparent;
         /* Custom Scroll Bar */
-        --scroll-bar-width: 4px;
+        --scroll-bar-width: 0px;
         --scroll-bar-track-color: transparent;
         --scroll-bar-thumb-color: #666666;
         --scroll-bar-thumb-hover-color: #f8f8f8;
