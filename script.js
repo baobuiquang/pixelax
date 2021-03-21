@@ -15,8 +15,8 @@ function setUI() {
     $('.menu_options__ssize .w').val(defSceneWidth);
     $('.menu_options__ssize .h').val(defSceneHeight);
     $('button.s').data('size', `${defSceneWidth},${defSceneHeight}`);
-    $('button.m').data('size', `${defSceneWidth * 1.5},${defSceneHeight * 1.5}`);
-    $('button.l').data('size', `${defSceneWidth * 2},${defSceneHeight * 2}`);
+    $('button.m').data('size', `${defSceneWidth * 2},${defSceneHeight * 2}`);
+    $('button.l').data('size', `${defSceneWidth * 3},${defSceneHeight * 3}`);
     $('button.xl').data('size', `${defSceneWidth * 2.5},${defSceneHeight * 2.5}`);
 }
 
