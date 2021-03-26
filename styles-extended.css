@@ -1,7 +1,7 @@
 :root {
-    --theme-color: #1b1b1b;
-    --theme-color-2: #141414;
-    --theme-color-hover: #3b3b3b;
+    --theme-color: #222222;
+    --theme-color-2: #0f0f0f;
+    --theme-color-hover: #464646;
     --accent-color: #ffd885;
 
     --sub-text-color: #999999;
@@ -9,8 +9,8 @@
     --tool-color: #6d6d6d;
     --tool-color-hover: #e6e6e6;
 
-    --keyframes-color: #1b1b1b;
-    --keyframes-control-color: #161616;
+    --keyframes-color: #222222;
+    --keyframes-control-color: #121212;
 }
 
 * {
